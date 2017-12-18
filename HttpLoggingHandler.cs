@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -54,6 +55,22 @@ namespace HttpLogger
             if (response.Content != null)
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
             Debug.WriteLine("");
+        }
+
+        public static string GetResponseLogString(HttpRequestMessage request)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Method: ");
+            stringBuilder.Append(request.Method);
+            stringBuilder.Append(", RequestUri: '");
+            stringBuilder.Append(request.RequestUri == null ? null : request.RequestUri.ToString());
+            stringBuilder.Append("', Version: ");
+            stringBuilder.Append(request.Version);
+            stringBuilder.Append(", Content: ");
+            stringBuilder.Append(request.Content == null ? null : request.Content.GetType().ToString());
+            stringBuilder.Append(", Headers:\r\n");
+            stringBuilder.Append(request.Headers.ToString());
+            return stringBuilder.ToString();
         }
     }
 }
