@@ -57,19 +57,16 @@ namespace HttpLogger
             Debug.WriteLine("");
         }
 
-        public static string GetResponseLogString(HttpRequestMessage request)
+        public static string GetRequestLogString(HttpRequestMessage request)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("Method: ");
-            stringBuilder.Append(request.Method);
+            stringBuilder.Append($"Method: {request.Method}");
             stringBuilder.Append(", RequestUri: '");
             stringBuilder.Append(request.RequestUri == null ? null : request.RequestUri.ToString());
-            stringBuilder.Append("', Version: ");
-            stringBuilder.Append(request.Version);
+            stringBuilder.Append($"', Version: {request.Version}");
             stringBuilder.Append(", Content: ");
             stringBuilder.Append(request.Content == null ? null : request.Content.GetType().ToString());
-            stringBuilder.Append(", Headers:\r\n");
-            stringBuilder.Append(request.Headers.ToString());
+            stringBuilder.Append($", Headers:\r\n {request.Headers.ToString()}");
             return stringBuilder.ToString();
         }
     }

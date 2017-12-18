@@ -24,7 +24,7 @@ namespace HttpLogger.Test
             HttpRequestMessage request = new HttpRequestMessage();
             request.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1");
 
-            string log = HttpLoggingHandler.GetResponseLogString(request);
+            string log = HttpLoggingHandler.GetRequestLogString(request);
 
             Assert.AreEqual(1, Regex.Matches(log, @"\buser-agent\b").Count);
         }
