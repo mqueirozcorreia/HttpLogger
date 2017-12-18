@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpLogger", "HttpLogger.csproj", "{CAC52A69-45BF-41D6-AB86-8443F977251F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpLogger.Test", "..\HttpLogger.Test\HttpLogger.Test.csproj", "{47F14DD6-6C8D-4A48-A2C9-0A089B873C6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpLogger.Test", "HttpLogger.Test\HttpLogger.Test.csproj", "{47F14DD6-6C8D-4A48-A2C9-0A089B873C6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
